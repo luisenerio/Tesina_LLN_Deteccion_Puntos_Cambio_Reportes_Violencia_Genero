@@ -1,0 +1,77 @@
+---
+title: "Reportes de Violencia de Genero 911 en la ciudad de Monterrey"
+author: "Luis Enrique López Nerio"
+date: "14/11/2022"
+output: 
+  html_document:
+    toc: yes
+    toc_depth: 2
+    number_sections: true
+
+---
+
+
+```{r,echo=FALSE,warning=FALSE}
+
+#librerias y rutas
+ruta <- "C:/Users/User/Desktop/Tesina"
+ruta_completa <-paste(ruta,"/Datos.csv",sep="")
+```
+
+Librerias utilizadas
+```{r, message=FALSE,warning=FALSE, echo =FALSE}
+library(fpp3)
+library(tidyverse)
+library(DataExplorer)
+library(kableExtra)
+#lectura de los datos
+
+datos <- readr::read_delim(ruta_completa, 
+                  delim=",",
+                  col_types = cols(Fecha=col_date("%d/%m/%Y")))
+
+
+
+```
+
+
+
+# Descripción de la base 
+La base de datos con la que pienso trabajar es de número de reportes que se recibieron en el sistema de emergencias 911 para el municipio de Monterrey durante el period de Enero 2017 a Septiembre dle 2022.
+La base contiene información desde fecha, hora, corporación que atiende la llamada y datos de geolocalización con ruido para proteger el anomiato y proteger posibles indentificaciones de las personas que realizan la denuncia.
+
+Los reportes obedecen al Catálogo Nacional de Incidentes de Emergencia.
+
+
+| **Nombre de la variable** | **Descripción**                                                                                                                                                                                                                                                                  |
+|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  Número de Reporte        | Id del reporte de la llamada                                                                                                                                                                                                                                                     |
+| Fecha                     | Fecha en que se realizo la llamada                                                                                                                                                                                                                                               |
+| Municipio                 | Indica el municipio de donde se recibio la llamda, actualmente solo contiene información del municipio de Monterrey                                                                                                                                                              |
+| Colonia                   | Colonia de donde se realizó el reporte, cuenta con 914 colonias diferentes dentro del municipio de Monterrey                                                                                                                                                                     |
+| Estado                    | Solamente se cuenta con información del estado de Nuevo Leon(Monterrey)                                                                                                                                                                                                          |
+| Descripción Tipo          | Se refiere al tipo de reporte e.g. Violencia familiar, violencia de pareja, violación, etc.                                                                                                                                                                                      |
+| Corporación               | Indica la corporación que atendio el reporte. e.g. Fuerza Civil, Policia de Monterrey, etc.                                                                                                                                                                                      |
+| Hora de Recepción         | Hora del reporte                                                                                                                                                                                                                                                                 |
+| Descripción Cierre        | Indica el cierre del reporte como puede ser "Hecho Real", "Falsa Alarma", "No Especificado", es importante indicar que un reporte puede ser catalogado como falsa alarma, sin embargo, esto no es un indicador 100\% fiable de que el reporte sean en realidad una falsa alarma. |
+| Latitud                   | Coordenada geográfica latitud aproximada del lugar en el que se registraron los hecho                                                                                                                                                                                            |
+| Longitud                  | Coordenada geográfica longitud aproximada del lugar en el que se registraron los hechos                                                                                                                                                                                          |
+| Via de Recepción          | Vía por la cual se recibió el reporte                                                                                                                                                                                                                                            |
+
+```{r,echo =FALSE}
+kbl(head(datos)) %>%   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+
+# Análisis exploratorio
+
+Como se mencionaba los datos cuentan con datos desde Enero del 2017 hasta la fecha, la serie de tiempo diaria muestra el siguiente comportamiento
+
+
+```{r,echo=FALSE}
+datos %>% select(fecha) %>% group_by(fecha) %>% summarise(llamadas = n()) %>% as_tsibble() %>% autoplot()+labs(y="# de reportes", x="Día",title="Serie de tiempo diaria")
+
+```
+
+
+
