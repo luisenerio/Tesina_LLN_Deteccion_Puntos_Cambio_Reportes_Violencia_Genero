@@ -66,13 +66,29 @@ San Nicolás de los Garza, N.L.
 
 ## Capitulo 2 — Delimitacion y Planteamiento del Problema de Investigacion
 
-La violencia de género es un problema grave en México, estudiarlo es crucial para entender las causas y encontrar soluciones efectivas. Entender el fenómeno de la violencia de género nos permite identificar las causas que provocan la violencia contra la mujer y contribuyen a la perpetuación de la misma.
 
-Sin un entendimiento profundo de la problemática, es complicado desarrollar políticas y programas para prevenir la violencia, que brinden apoyo a las víctimas, desmonten los estereotipos y prejuicios que justifican la violencia contra la mujer. Por lo tanto, el estudio de la violencia de género es fundamental para garantizar la igualdad y la seguridad de las mujeres en México y promover una sociedad más justa e igualitaria para todos.
+---
 
-En la actualidad existen muchos estudios y fuentes de información sobre la violencia de género, una de las fuentes de información que tiene carácter oficial son las llamadas de emergencia al 9-1-1. Estas llamadas se recaban por los Centros de atención de llamadas de emergencia a lo largo del territorio mexicano.
+La violencia de género constituye uno de los problemas de derechos humanos más graves en México, de acuerdo con la Organización Mundial de la Salud (2021), casi una de cada tres mujeres en el mundo ha sufrido violencia física o sexual al menos una vez en su vida. En México la magnitud del fenómeno es aún más pronunciada: la Encuesta Nacional sobre la Dinámica de las Relaciones en los Hogares (ENDIREH 2021) del INEGI, la cual es considerada el indicador de referencia nacional en la materia, reportó que el 70.1% de las mujeres de 15 años y más han experimentado al menos un incidente de violencia a lo largo de su vida (INEGI, 2022). 
+Ademas, esta cifra solamente representa la violencia que las mujeres reconocen y reportan en la encuesta, la Encuesta Nacional de Victimización (ENVIPE, 2022) estima que el 93.2% de los delitos en México no se denuncian formalmente ante las autoridades, esto nos deja en evidencia que los registros administrativos de denuncias formales, como las carpetas de investigación consolidadas mensualmente por el Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública (SESNSP, 2025) representan solamente una fracción del fenenomeno real. Comprender los patrones temporales del fenomeno de la violencia de genero resulta fundamental para el diseño de plíticas públicas efectivas.
 
-Es dentro de este contexto que el municipio de Monterrey libera la base de datos de reportes al 911 relacionados con incidentes de violencia de género (Datos Abiertos Monterrey, 2022). La base se liberó a finales del 2022 y cuenta con los reportes realizados al 911 por motivos de violencia de género en el municipio de Monterrey desde enero del 2017 hasta septiembre del 2022.
+
+Partiendo del punto de la importancia de estudiar la violencia de genero, el estudio de la problematica no puede limitarse a las fuentes estadísticas institucionales tradicionales. Tanto la ENDIREH como las carpetas de investigación del SESNSP capturan dimensiones distintas del fenómeno, sin embargo, ambas depende de que la víctica toma la iniciativa de denunciar formalmente ante el Ministerio Público o su experiencia se vea reflejada en la muestra de la encuesta. En este contexto, los reportes realizados al servicio de emergencias 9-1-1 representan una fuente complementaria con ventajas importantes, una mayor granularidad, periodicidad continua y ademas  capturan episodios de violencia no derivan en una denuncia formal (Rojido y Cano, 2018). Es precisamente esta fuente la que utiliza el presente trabajo para analizar los patrones temporales de la violencia de género en Monterrey.
+
+La elección de Monterrey como caso de estudio no es arbitraria: desde el 18 de noviembre de 2016, el estado de Nuevo León cuenta con una Declaratoria de Alerta de Violencia de Género contra las Mujeres que incluyó al municipio de Monterrey entre sus cinco territorios prioritarios (CONAVIM, 2016), lo que convierte a este periodo de análisis en especialmente relevante para evaluar el comportamiento de los reportes en vigencia de la alerta.
+
+
+La base de datos de reportes al 9-1-1 del municipio de Monterrey, publicada a finales de 2022, representa una oportunidad para enriquecer el entendimiento del fenómeno de la violencia de género en la ciudad. Organismos como el Observatorio de Violencia de Género de Nuevo León (2022) han construido un panorama sólido a partir de fuentes como el SESNSP y la ENDIREH; el análisis temporal de los reportes de emergencia mediante técnicas estadísticas formales puede sumarse a ese esfuerzo, aportando una dimensión adicional: la identificación de momentos en que el comportamiento de la serie presenta cambios estructurales que podrían asociarse a distintos tipos de eventos, ya sean de política pública —como la Declaratoria de Alerta de Violencia de Género de 2016—, de contexto social —como el confinamiento por COVID-19 en 2020—, o de carácter sociocultural, como eventos deportivos de alta convocatoria que la literatura ha asociado con incrementos en los reportes de violencia de género (Brimicombe y Cafe, 2012).
+
+Lo anterior plantea la siguiente pregunta de investigación: ¿En qué momentos se producen cambios estructurales estadísticamente significativos en la serie de tiempo de reportes de violencia de género al 9-1-1 en el municipio de Monterrey durante el periodo enero 2017 – septiembre 2022, y en qué medida dichos cambios coinciden con algún evento de interés identificable? Para responder esta pregunta, el presente trabajo propone la aplicación de técnicas estadísticas de detección de puntos de cambio, cuyo fundamento teórico y metodológico se desarrolla en los capítulos subsecuentes.
+
+---
+
+
+
+
+
+
 
 > **[Figura 1]** Serie de tiempo de los reportes de violencia de género. Fuente: Datos Abiertos Monterrey, 2022.
 
@@ -280,6 +296,22 @@ En los **métodos no paramétricos**, los datos no siguen una distribución para
 ---
 
 ## Referencias
+---
+INEGI. (2022a). Encuesta Nacional sobre la Dinámica de las Relaciones en los Hogares (ENDIREH) 2021. Instituto Nacional de Estadística y Geografía. https://www.inegi.org.mx/programas/endireh/2021/
+
+INEGI. (2022b). Encuesta Nacional de Victimización y Percepción sobre Seguridad Pública (ENVIPE) 2022. Instituto Nacional de Estadística y Geografía. https://www.inegi.org.mx/programas/envipe/2022/
+
+Organización Mundial de la Salud. (2021). Violencia contra la mujer. https://www.who.int/es/news-room/fact-sheets/detail/violence-against-women
+
+Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública. (2025). Cifras de víctimas del fuero común 2015–2025 [Base de datos]. Gobierno de México. https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva
+
+
+Datos Abiertos Monterrey. (2022). Reportes al 911 por violencia de género [Base de datos]. Municipio de Monterrey. https://datos.monterrey.gob.mx/dataset/reportes-al-911-por-violencia-de-genero
+https://mide.monterrey.gob.mx/catalogue/#/dataset/92
+
+Comisión Nacional para Prevenir y Erradicar la Violencia Contra las Mujeres. (2016). Declaratoria de Alerta de Violencia de Género contra las Mujeres para el estado de Nuevo León. CONAVIM / Secretaría de Gobernación. https://www.gob.mx/conavim/documentos/solicitud-de-alerta-de-violencia-de-genero-contra-las-mujeres-en-el-estado-de-nuevo-leon
+
+---
 
 Aminikhanghahi, S., & Cook, D. J. (2017). A survey of methods for time series change point detection. *Knowledge and Information Systems*, 51(2), 339–367.
 
