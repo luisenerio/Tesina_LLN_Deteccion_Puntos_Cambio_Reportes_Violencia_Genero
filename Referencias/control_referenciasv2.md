@@ -231,6 +231,61 @@ Rojido, E., y Cano, I. (2018). Los desafíos metodológicos
   para el argumento de factores de no denuncia.
 ---
 
+
+### BAESVIM2024
+**Estado:** ✅ Verificada — portal oficial activo
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 2, Cap. 4.1.3
+
+**Referencia APA 7:**
+Secretaría de las Mujeres de Nuevo León. (2024).
+  *Informes estadísticos de casos de violencia contra
+  mujeres (BAESVIM). Reporte trimestral enero a marzo
+  2024*. Gobierno del Estado de Nuevo León.
+  https://www.nl.gob.mx/es/informes-estadisticos-de-
+  casos-de-violencia-contra-mujeres-baesvim
+
+**Notas:**
+- Fuente oficial del Gobierno de NL, mucho más
+  verificable y citable que el Observatorio.
+- Publicación trimestral desde 2020 — cubre
+  exactamente el periodo de tu serie de tiempo.
+- Usa datos del SESNSP, Fiscalía NL y registros
+  institucionales propios.
+- Sustituye al ObservatorioVGNL2022 en el párrafo.
+- En texto citar como: (Secretaría de las Mujeres
+  de NL, 2024).
+- Puedes citar el reporte más cercano a tu periodo
+  de análisis: usa el de 2022 si necesitas coincidir
+  con tu serie (2017–2022).
+
+---
+
+### BrimicombeyCafe2012
+**Estado:** ✅ Verificada — DOI activo
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 2
+
+**Referencia APA 7:**
+Brimicombe, A., y Cafe, R. (2012). Beware, win or lose:
+  domestic violence and the World Cup. *Significance*,
+  *9*(5), 32–35.
+  https://doi.org/10.1111/j.1740-9713.2012.00606.x
+
+**Dato clave:** Incremento del 27.7% en reportes de
+violencia doméstica cuando Inglaterra ganó, y 33.9%
+cuando perdió, durante el Mundial 2010 en Inglaterra.
+
+**Notas:**
+- DOI verificado y activo.
+- Estudio basado en datos de Inglaterra — contexto
+  distinto a México. Citar como evidencia internacional,
+  no como referencia directa al caso de Monterrey.
+- En texto citar como: (Brimicombe y Cafe, 2012).
+- El mecanismo propuesto no es causalidad directa
+  sino exacerbación de tensiones existentes, agravada
+  por consumo de alcohol.
+
 ### ONU1993
 **Estado:** ⚠️ Pendiente de verificar
 **Tipo:** T — cita textual

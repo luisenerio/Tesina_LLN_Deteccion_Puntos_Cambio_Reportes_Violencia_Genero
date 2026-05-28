@@ -78,7 +78,7 @@ Partiendo del punto de la importancia de estudiar la violencia de genero, el est
 La elección de Monterrey como caso de estudio no es arbitraria: desde el 18 de noviembre de 2016, el estado de Nuevo León cuenta con una Declaratoria de Alerta de Violencia de Género contra las Mujeres que incluyó al municipio de Monterrey entre sus cinco territorios prioritarios (CONAVIM, 2016), lo que convierte a este periodo de análisis en especialmente relevante para evaluar el comportamiento de los reportes en vigencia de la alerta.
 
 
-La base de datos de reportes al 9-1-1 del municipio de Monterrey, publicada a finales de 2022, representa una oportunidad para enriquecer el entendimiento del fenómeno de la violencia de género en la ciudad. Organismos como el Observatorio de Violencia de Género de Nuevo León (2022) han construido un panorama sólido a partir de fuentes como el SESNSP y la ENDIREH; el análisis temporal de los reportes de emergencia mediante técnicas estadísticas formales puede sumarse a ese esfuerzo, aportando una dimensión adicional: la identificación de momentos en que el comportamiento de la serie presenta cambios estructurales que podrían asociarse a distintos tipos de eventos, ya sean de política pública —como la Declaratoria de Alerta de Violencia de Género de 2016—, de contexto social —como el confinamiento por COVID-19 en 2020—, o de carácter sociocultural, como eventos deportivos de alta convocatoria que la literatura ha asociado con incrementos en los reportes de violencia de género (Brimicombe y Cafe, 2012).
+La base de datos de reportes al 9-1-1 del municipio de Monterrey, publicada a finales de 2022, representa una oportunidad para enriquecer el entendimiento del fenómeno de la violencia de género en la ciudad.Organismos como la Secretaría de las Mujeres de Nuevo León han construido un panorama sólido a partir de fuentes como el SESNSP y la ENDIREH, publicando reportes trimestrales de violencia contra las mujeres a través del BAESVIM (Secretaría de las Mujeres de NL, 2024). El análisis temporal de los reportes de emergencia mediante técnicas estadísticas formales puede sumarse a ese esfuerzo, aportando una dimensión adicional, la identificación de momentos en que el comportamiento de la serie presenta cambios estructurales que podrían asociarse a distintos tipos de eventos, ya sean de política pública, como la Declaratoria de Alerta de Violencia de Género de 2016, de contexto social como el confinamiento por COVID-19 en 2020, o de carácter sociocultural, como eventos deportivos de alta convocatoria que la literatura ha asociado con incrementos en los reportes de violencia de género (Brimicombe y Cafe, 2012).
 
 Lo anterior plantea la siguiente pregunta de investigación: ¿En qué momentos se producen cambios estructurales estadísticamente significativos en la serie de tiempo de reportes de violencia de género al 9-1-1 en el municipio de Monterrey durante el periodo enero 2017 – septiembre 2022, y en qué medida dichos cambios coinciden con algún evento de interés identificable? Para responder esta pregunta, el presente trabajo propone la aplicación de técnicas estadísticas de detección de puntos de cambio, cuyo fundamento teórico y metodológico se desarrolla en los capítulos subsecuentes.
 
@@ -87,14 +87,8 @@ Lo anterior plantea la siguiente pregunta de investigación: ¿En qué momentos 
 
 
 
-
-
-
 > **[Figura 1]** Serie de tiempo de los reportes de violencia de género. Fuente: Datos Abiertos Monterrey, 2022.
 
-Esta base de datos es una fuente oficial, sin embargo, por su fecha de publicación, no es una base de datos ampliamente estudiada; como se mencionaba anteriormente, estudiar este tipo de datos ayuda a entender el fenómeno de la violencia de género.
-
-Una problemática es analizar el comportamiento de la serie de tiempo del número de reportes realizados e identificar patrones o momentos en los que las propiedades de la serie de tiempo tienen un cambio.
 
 ---
 
