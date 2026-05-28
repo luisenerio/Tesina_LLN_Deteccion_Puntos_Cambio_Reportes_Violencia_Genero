@@ -1,43 +1,46 @@
 
-ruta <- "C:/Users/User/Desktop/Tesina"
-ruta_completa <-paste(ruta,"/Datos/Datos.csv",sep="")
+
+
+ruta <-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+ruta_completa <-paste("../Datos/Datos.csv",sep="")
 library(fpp3)
 library(tidyverse)
 library(DataExplorer)
+library(ggplot2)
+
+datos <- read_csv(ruta_completa, col_names= TRUE, col_types = cols(fecha=col_date("%d/%m/%Y")))
 
 
-datos <- readr::read_delim(ruta_completa, 
-                  delim=",",
-                  col_types = cols(fecha=col_date("%d/%m/%Y")))
+## Llamadas Totales
+datos %>% summarise(llamadas_totales= n())
 
 
+# Numero de llamadas por colonia
+datos %>% group_by(colonia) %>% summarise(Llamadas_colonia = n()) %>% arrange(desc(Llamadas_colonia))
 
-
-
-
-
-##Llamadas totales
-datos %>% summarise(llamadas_totales=n())
-
-#Numero de llamadas por colonia
-datos %>% group_by(colonia) %>% summarise(Llamadas_Colonia=n()) %>% arrange(desc(Llamadas_Colonia))
-#Numero de colonias diferentes
+#Numero distinto de colonias
 n_distinct(datos$colonia)
 
-library(ggplot2)
-#Numero de llamadas por tipo de llamada
-datos %>% group_by(descripcion_tipo) %>% summarise(Tipo_llamada=n()) %>% arrange(desc(Tipo_llamada))
+
+Numero de llamadas por tipo de llamada
 
 
 
+datos %>% group_by(descripcion_tipo) %>% summarise(Llamadas_tipo=n()) %>% arrange(desc(descripcion_tipo))
 tipo_llamada <-datos %>% group_by(descripcion_tipo) %>% summarise(Tipo_llamada=n()) %>% arrange(desc(Tipo_llamada))
+
+
   ggplot(data=tipo_llamada,aes(y=descripcion_tipo,x=Tipo_llamada,fill=descripcion_tipo))+
   geom_bar(stat="identity",color="black",position=position_dodge())+theme_minimal()+scale_fill_brewer(palette="Dark2")+
     geom_text(aes(label=Tipo_llamada), hjust=-.1, color="black",
               position = position_dodge(0.9), size=3.5)+
     labs(x="# de llamadas",y="Tipo de reporte")
 
-datos %>% group_category("descripcion_tipo",threshold=.01,update=T) %>% 
+
+  
+  
+  
+  datos %>% group_category("descripcion_tipo",threshold=.01,update=T) %>% 
   group_by(descripcion_tipo) %>% 
   summarise(Tipo_llamada=n()) %>%
   arrange(desc(Tipo_llamada)) %>% ggplot(aes(y=descripcion_tipo,x=Tipo_llamada,fill=descripcion_tipo))+
@@ -49,7 +52,7 @@ datos %>% group_category("descripcion_tipo",threshold=.01,update=T) %>%
 n_distinct(datos$descripcion_tipo)
 
 
-#Número de llamadas por descripción del cierre
+#N?mero de llamadas por descripci?n del cierre
 datos %>% group_by(descripcion_cierre) %>% summarise(Tipo_llamada=n()) %>% arrange(desc(Tipo_llamada))
 
 datos %>% group_category("descripcion_cierre", threshold = .00015,update=T) %>% group_by(descripcion_cierre) %>% summarise(num_llamadas = n()) %>% arrange(desc(num_llamadas)) %>% 
@@ -59,7 +62,11 @@ datos %>% group_category("descripcion_cierre", threshold = .00015,update=T) %>% 
             position = position_dodge(.9), size=3.5)+
   labs(x="# de llamadas", y ="Cierre del reporte", title ="Cierre de la llamada")
 
-datos %>% select(fecha) %>% group_by(fecha) %>% summarise(llamada=n()) %>% as_tsibble() %>% autoplot()+labs(y="# de reportes", x="Día",title="Serie de tiempo diaria")
+datos %>% select(fecha) %>% group_by(fecha) %>% summarise(llamada=n()) %>% as_tsibble() %>% autoplot()+labs(y="# de reportes", x="D?a",title="Serie de tiempo diaria")
+
+
+
+
 
 datos %>% mutate(semana=yearweek(fecha)) %>% 
   select(semana) %>% 
@@ -84,7 +91,7 @@ datos %>% mutate(mes=yearmonth(Fecha)) %>% select(mes) %>% group_by(mes) %>% sum
 
 
 
-datos %>% select(fecha) %>% group_by(fecha) %>% summarise(llamadas = n()) %>% as_tsibble() %>% autoplot()+labs(y="# de reportes", x="Día",title="Serie de tiempo diaria")
+datos %>% select(fecha) %>% group_by(fecha) %>% summarise(llamadas = n()) %>% as_tsibble() %>% autoplot()+labs(y="# de reportes", x="D?a",title="Serie de tiempo diaria")
 
 datos %>% mutate(semana=yearweek(fecha)) %>% 
   select(semana) %>% 
@@ -113,9 +120,14 @@ serie_tiempo_semana <- datos %>% mutate(semana=yearweek(fecha)) %>%
 
 serie_tiempo_semana_2017<- serie_tiempo_semana %>% mutate(year=year(semana)) %>% filter(year<=2017) %>% select(semana,llamadas)
 
-serie_tiempo_semana_2017 %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por semana año 2017")
-serie_tiempo_semana_2017 %>% gg_tsdisplay(difference(llamadas)) %>% labs(title="Serie de tiempo # de llamadas por semana año 2017")
+serie_tiempo_semana_2017 %>% gg_tsdisplay(llamadas) + labs(title="Serie de tiempo # de llamadas por semana aÃ±o 2017")
+
+#series de tiempo con lag
+serie_tiempo_semana_2017 %>% gg_tsdisplay(difference(llamadas)) + labs(title="Serie de tiempo # de llamadas por semana a?o 2017")
+
 shapiro.test(difference(serie_tiempo_semana_2017$llamadas))
+
+
 hist((difference(serie_tiempo_semana_2017$llamadas)))
 
 
@@ -124,7 +136,7 @@ hist((difference(serie_tiempo_semana_2017$llamadas)))
 serie_tiempo_semana %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por semana 2017-2022")
 serie_tiempo_semana %>% gg_tsdisplay(difference(llamadas),plot_type = "partial") %>% labs(title="Serie de tiempo # de llamadas por semana(lag 1)")
 
-serie_tiempo_dias %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por día 2017-2022")
+serie_tiempo_dias %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por d?a 2017-2022")
 
 shapiro.test(difference(serie_tiempo_semana$llamadas))
 hist((difference(serie_tiempo_semana$llamadas)))
@@ -239,7 +251,7 @@ plot(m, forecast) + add_changepoints_to_plot(m)
 
 serie_tiempo_semana %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por semana 2017-2022")
 serie_tiempo_semana %>% gg_tsdisplay(difference(llamadas),plot_type = "partial") %>% labs(title="Serie de tiempo # de llamadas por semana(lag 1)")
-serie_tiempo_dias %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por día 2017-2022")
+serie_tiempo_dias %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por d?a 2017-2022")
 
 
 

@@ -261,30 +261,206 @@ Secretaría de las Mujeres de Nuevo León. (2024).
 
 ---
 
+
+---
+
+## Bibliografía — Partidos de Fútbol y Violencia de Género
+
 ### BrimicombeyCafe2012
 **Estado:** ✅ Verificada — DOI activo
 **Tipo:** P — paráfrasis
-**Citada en:** Cap. 2
+**Citada en:** Cap. 2, Cap. 5, Cap. 6
 
 **Referencia APA 7:**
-Brimicombe, A., y Cafe, R. (2012). Beware, win or lose:
-  domestic violence and the World Cup. *Significance*,
-  *9*(5), 32–35.
-  https://doi.org/10.1111/j.1740-9713.2012.00606.x
-
-**Dato clave:** Incremento del 27.7% en reportes de
-violencia doméstica cuando Inglaterra ganó, y 33.9%
-cuando perdió, durante el Mundial 2010 en Inglaterra.
+Brimicombe, A., y Cafe, R. (2012). Beware, win or lose: Domestic violence and the World Cup. *Significance*, *9*(5), 32–35. https://doi.org/10.1111/j.1740-9713.2012.00606.x
 
 **Notas:**
-- DOI verificado y activo.
-- Estudio basado en datos de Inglaterra — contexto
-  distinto a México. Citar como evidencia internacional,
-  no como referencia directa al caso de Monterrey.
-- En texto citar como: (Brimicombe y Cafe, 2012).
-- El mecanismo propuesto no es causalidad directa
-  sino exacerbación de tensiones existentes, agravada
-  por consumo de alcohol.
+- Paper original que motivó el análisis de partidos en la tesina.
+- Hallazgo: victorias Y derrotas aumentan VD, empates no generan efecto significativo.
+- Usa comparación contra mismo día de semana en semanas sin partido — control que debes replicar.
+- PDF verificado y disponible (adjunto en sesión).
+
+---
+
+### CardDahl2011
+**Estado:** ✅ Verificada — DOI activo
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 2, Cap. 5, Cap. 6
+
+**Referencia APA 7:**
+Card, D., y Dahl, G. B. (2011). Family violence and football: The effect of unexpected emotional cues on violent behavior. *The Quarterly Journal of Economics*, *126*(1), 103–143. https://doi.org/10.1093/qje/qjr001
+
+**Notas:**
+- Paper fundacional del tema — el más citado en la literatura de deportes y VD.
+- Derrotas inesperadas en NFL generan +10% en VD.
+- Modelo Poisson con dummies de temporada, semana y clima — estructura base para el tuyo.
+- Acceso libre en PMC: pmc.ncbi.nlm.nih.gov/articles/PMC3712874/
+
+---
+
+### Trendl2021
+**Estado:** ✅ Verificada — DOI activo
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 5, Cap. 6
+
+**Referencia APA 7:**
+Trendl, A., Stewart, N., y Mullett, T. L. (2021). The role of alcohol in the link between national football (soccer) tournaments and domestic abuse: Evidence from England. *Social Science & Medicine*, *268*, 113457. https://doi.org/10.1016/j.socscimed.2020.113457
+
+**Notas:**
+- Usa regresión binomial negativa — más adecuada que OLS para datos de conteos sobredispersos.
+- +47% en casos relacionados con alcohol tras victoria. Empates sin efecto.
+- 10 años de datos (2010–2019), West Midlands Police.
+- Justifica elección de binomial negativa sobre regresión lineal.
+
+---
+
+### IvandicManchester2021
+**Estado:** ✅ Verificada
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 5, Cap. 6
+
+**Referencia APA 7:**
+Ivandić, R., Kirchmaier, T., y Linton, B. (2021). Football, alcohol and domestic abuse (CEP Discussion Paper No. 1781). London School of Economics. https://cep.lse.ac.uk/pubs/download/dp1781.pdf
+
+**Notas:**
+- Diseño más similar al de la tesina: dos equipos de la misma ciudad (Manchester City y Manchester United) — equivalente a Tigres y Rayados en Monterrey.
+- 434,596 llamadas, 780 partidos, 2012–2019.
+- El efecto se extiende hasta 16h después del partido — justifica análisis de lags.
+
+---
+
+## Bibliografía — Enfoques Metodológicos
+
+---
+
+### CPD Offline
+
+#### Truong2020
+**Estado:** ✅ Verificada — DOI activo
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 5.3, Cap. 6
+
+**Referencia APA 7:**
+Truong, C., Oudre, L., y Vayatis, N. (2020). Selective review of offline change point detection methods. *Signal Processing*, *167*, 107299. https://doi.org/10.1016/j.sigpro.2019.107299
+
+**Notas:**
+- Revisión de más de 140 artículos de CPD offline.
+- Marco teórico: función de costo + método de búsqueda + restricción en número de cambios.
+- Librería asociada: ruptures (Python).
+- Acceso abierto en arXiv: arxiv.org/abs/1801.00718
+
+---
+
+#### Killick2012
+**Estado:** ✅ Verificada — DOI activo
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 5.3, Cap. 6
+
+**Referencia APA 7:**
+Killick, R., Fearnhead, P., y Eckley, I. A. (2012). Optimal detection of changepoints with a linear computational cost. *Journal of the American Statistical Association*, *107*(500), 1590–1598. https://doi.org/10.1080/01621459.2012.737745
+
+**Notas:**
+- Paper original del algoritmo PELT.
+- Citar cuando uses rpt.Pelt() en ruptures.
+- Complejidad O(n) en la práctica.
+- Acceso libre en arXiv: arxiv.org/abs/1101.1438
+
+---
+
+#### Page1954
+**Estado:** ✅ Verificada
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 5.3
+
+**Referencia APA 7:**
+Page, E. S. (1954). Continuous inspection schemes. *Biometrika*, *41*(1/2), 100–115.
+
+**Notas:**
+- Primera aplicación histórica de CPD en control de calidad industrial.
+- Ya citada en el docx original de la tesina.
+
+---
+
+### Interrupted Time Series (ITS)
+
+#### BernalITS2017
+**Estado:** ✅ Verificada — DOI activo
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 5, Cap. 6
+
+**Referencia APA 7:**
+Bernal, J. L., Cummins, S., y Gasparrini, A. (2017). Interrupted time series regression for the evaluation of public health interventions: a tutorial. *International Journal of Epidemiology*, *46*(1), 348–355. https://doi.org/10.1093/ije/dyw098
+
+**Notas:**
+- Referencia estándar para ITS en salud pública.
+- Tutorial con ejemplo trabajado paso a paso con regresión segmentada.
+- Trata problemas metodológicos: autocorrelación, estacionalidad y confusores.
+- Acceso abierto en Oxford Academic.
+
+---
+
+#### BernalITS2018
+**Estado:** ✅ Verificada
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 5, Cap. 6
+
+**Referencia APA 7:**
+Lopez Bernal, J., Soumerai, S., y Gasparrini, A. (2018). A methodological framework for model selection in interrupted time series studies. *Journal of Clinical Epidemiology*, *103*, 82–91.
+
+**Notas:**
+- Extensión metodológica del tutorial anterior.
+- Guía para selección de modelo en estudios ITS.
+
+---
+
+#### Wagner2002
+**Estado:** ✅ Verificada
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 5, Cap. 6
+
+**Referencia APA 7:**
+Wagner, A. K., Soumerai, S. B., Zhang, F., y Ross-Degnan, D. (2002). Segmented regression analysis of interrupted time series studies in medication use research. *Journal of Clinical Pharmacy and Therapeutics*, *27*(4), 299–309.
+
+**Notas:**
+- Referencia pionera de regresión segmentada aplicada a series de tiempo.
+- Base conceptual para entender los coeficientes del modelo ITS.
+
+---
+
+### CausalImpact
+
+#### Brodersen2015
+**Estado:** ✅ Verificada — DOI activo
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 5, Cap. 6
+
+**Referencia APA 7:**
+Brodersen, K. H., Gallusser, F., Koehler, J., Remy, N., y Scott, S. L. (2015). Inferring causal impact using Bayesian structural time-series models. *Annals of Applied Statistics*, *9*(1), 247–274. https://doi.org/10.1214/14-AOAS788
+
+**Notas:**
+- Paper original de CausalImpact (Google).
+- Versión bayesiana del ITS: produce distribución de probabilidad sobre el efecto, no solo un coeficiente.
+- Implementación en Python: pip install causalimpact
+- Candidato para evaluar efecto de COVID-19 (mar. 2020) sobre la serie.
+
+---
+
+### Regresión con Variables Dummy
+
+#### NeweyWest1987
+**Estado:** ✅ Verificada — DOI activo
+**Tipo:** P — paráfrasis
+**Citada en:** Cap. 6
+
+**Referencia APA 7:**
+Newey, W. K., y West, K. D. (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix. *Econometrica*, *55*(3), 703–708. https://doi.org/10.2307/1913610
+
+**Notas:**
+- Referencia para justificar corrección HAC en errores estándar.
+- En Python: cov_type='HAC', maxlags=7
+- Trendl et al. (2021) aplican esta corrección y confirman robustez de resultados.
+
+---
 
 ### ONU1993
 **Estado:** ⚠️ Pendiente de verificar
