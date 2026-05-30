@@ -10,7 +10,6 @@ library(ggplot2)
 
 datos <- read_csv(ruta_completa, col_names= TRUE, col_types = cols(fecha=col_date("%d/%m/%Y")))
 
-
 ## Llamadas Totales
 datos %>% summarise(llamadas_totales= n())
 
@@ -22,7 +21,7 @@ datos %>% group_by(colonia) %>% summarise(Llamadas_colonia = n()) %>% arrange(de
 n_distinct(datos$colonia)
 
 
-Numero de llamadas por tipo de llamada
+#Numero de llamadas por tipo de llamada
 
 
 
@@ -92,6 +91,7 @@ datos %>% mutate(mes=yearmonth(Fecha)) %>% select(mes) %>% group_by(mes) %>% sum
 
 
 datos %>% select(fecha) %>% group_by(fecha) %>% summarise(llamadas = n()) %>% as_tsibble() %>% autoplot()+labs(y="# de reportes", x="D?a",title="Serie de tiempo diaria")
+
 
 datos %>% mutate(semana=yearweek(fecha)) %>% 
   select(semana) %>% 
