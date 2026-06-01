@@ -66,7 +66,7 @@ datos %>% select(fecha) %>% group_by(fecha) %>% summarise(llamada=n()) %>% as_ts
 
 
 
-
+#serie de tiempo Semanal
 datos %>% mutate(semana=yearweek(fecha)) %>% 
   select(semana) %>% 
   group_by(semana) %>% 
@@ -75,6 +75,7 @@ datos %>% mutate(semana=yearweek(fecha)) %>%
   autoplot( colour = 'firebrick')+labs(y="# de Reportes", x="Semana",title = "Serie de tiempo de los reportes por violencia de Genero al 911(Semanal)")
 
 
+#serie de tiempo mensual
 datos %>% mutate(mes=yearmonth(fecha)) %>% 
   select(mes) %>% group_by(mes) %>% 
   summarise(llamadas=n()) %>% 
@@ -89,10 +90,10 @@ datos %>% mutate(mes=yearmonth(Fecha)) %>% select(mes) %>% group_by(mes) %>% sum
 
 
 
-
+#serie de diaria
 datos %>% select(fecha) %>% group_by(fecha) %>% summarise(llamadas = n()) %>% as_tsibble() %>% autoplot()+labs(y="# de reportes", x="D?a",title="Serie de tiempo diaria")
 
-
+#Serie de timepo Semanal
 datos %>% mutate(semana=yearweek(fecha)) %>% 
   select(semana) %>% 
   group_by(semana) %>% 
@@ -100,7 +101,7 @@ datos %>% mutate(semana=yearweek(fecha)) %>%
   as_tsibble() %>% 
   autoplot( colour = 'firebrick')+labs(y="# de Reportes", x="Semana",title = "Serie de tiempo de los reportes por violencia de Genero al 911(Semanal)")
 
-
+#Serie de tiempo mes
 datos %>% mutate(mes=yearmonth(fecha)) %>% 
   select(mes) %>% group_by(mes) %>% 
   summarise(llamadas=n()) %>% 
@@ -118,26 +119,22 @@ serie_tiempo_semana <- datos %>% mutate(semana=yearweek(fecha)) %>%
   summarise(llamadas=n()) %>% 
   as_tsibble() 
 
+
+####Series de tiempo normal y un lag, semanal
 serie_tiempo_semana_2017<- serie_tiempo_semana %>% mutate(year=year(semana)) %>% filter(year<=2017) %>% select(semana,llamadas)
-
 serie_tiempo_semana_2017 %>% gg_tsdisplay(llamadas) + labs(title="Serie de tiempo # de llamadas por semana año 2017")
-
 #series de tiempo con lag
 serie_tiempo_semana_2017 %>% gg_tsdisplay(difference(llamadas)) + labs(title="Serie de tiempo # de llamadas por semana a?o 2017")
 
 shapiro.test(difference(serie_tiempo_semana_2017$llamadas))
-
-
 hist((difference(serie_tiempo_semana_2017$llamadas)))
 
 
 
-
-serie_tiempo_semana %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por semana 2017-2022")
-serie_tiempo_semana %>% gg_tsdisplay(difference(llamadas),plot_type = "partial") %>% labs(title="Serie de tiempo # de llamadas por semana(lag 1)")
-
-serie_tiempo_dias %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por d?a 2017-2022")
-
+####serie de tiempo normal y un lag diaria, 
+serie_tiempo_semana %>% gg_tsdisplay(llamadas) + labs(title="Serie de tiempo # de llamadas por semana 2017-2022")
+serie_tiempo_semana %>% gg_tsdisplay(difference(llamadas),plot_type = "partial") + labs(title="Serie de tiempo # de llamadas por semana(lag 1)")
+serie_tiempo_dias %>% gg_tsdisplay(llamadas) +labs(title="Serie de tiempo # de llamadas por d?a 2017-2022")
 shapiro.test(difference(serie_tiempo_semana$llamadas))
 hist((difference(serie_tiempo_semana$llamadas)))
 
@@ -249,9 +246,11 @@ plot(m, forecast) + add_changepoints_to_plot(m)
 
 ##############
 
-serie_tiempo_semana %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por semana 2017-2022")
-serie_tiempo_semana %>% gg_tsdisplay(difference(llamadas),plot_type = "partial") %>% labs(title="Serie de tiempo # de llamadas por semana(lag 1)")
-serie_tiempo_dias %>% gg_tsdisplay(llamadas) %>% labs(title="Serie de tiempo # de llamadas por d?a 2017-2022")
+serie_tiempo_semana %>% gg_tsdisplay(llamadas) + labs(title="Serie de tiempo # de llamadas por semana 2017-2022")
+
+serie_tiempo_semana %>% gg_tsdisplay(difference(llamadas),plot_type = "partial")+labs(title="Serie de tiempo # de llamadas por semana(lag 1)")
+
+serie_tiempo_dias %>% gg_tsdisplay(llamadas) + labs(title="Serie de tiempo # de llamadas por d?a 2017-2022")
 
 
 
